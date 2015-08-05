@@ -34,7 +34,10 @@
 	3.当你改乱工作区的某个文件内容，并添加到暂存区中，想丢弃修改，
 	可以这样做，使用命令git reset HEAD file 回到改乱的状态，
 	然后在使用命令git checkout --filename来撤销修改.
-		
+(7)删除文件：
+	1.使用 rm filename 删除工作区的某个文件，但不会删除版本库中的，
+	你可以使用git checkout -- filename 进行恢复。
+	2.如果你你想从版本库中删除就使用git rm filename 并提交git commit -m "",这样就从版本库中删除了。
 		
 		
 		
