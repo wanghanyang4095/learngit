@@ -1,0 +1,54 @@
+(1)git配置：
+	git config --global user.name "your name"
+	git config --global user.email "email@example.com"
+	注意git config命令的--global参数，用了这个参数，表示你这台机器上所有的Git仓库都会使用这个配置，当然也可以对某个仓库指定不同的用户名和Email地址。
+(2).创建版本库：
+	1.选择一个合适的地方，创建一个空目录：
+		mkdir d:/learngit
+		cd d:/learngit
+		pwd    pwd命令用于显示当前目录
+	2.使用git init命令把d:/learngit目录变成Git可以管理的仓库:
+		git init     这样仓库就建好了.  
+		里面多了一个.git的目录，可以通过ls -ah命令查看
+	3.把文件添加到版本库：
+		第一步:git add 文件名称
+		第二步:git commit -m "你这次提交的说明"
+(3).时光机穿梭：
+	1.当我们成功添加并提交一个文件时，可以使用git status命令查看结果	
+		git status命令可以让我们时刻掌握仓库当前的状态，
+		git diff命令可以让我们知道上次对文件修改了什么
+		当修改后，重新添加到仓库 1.git add 文件名称 2.git commit -m "提交说明"
+(4).版本回退：
+	1.git log命令显示最近到最远的提交日志， 可以在git log 命令后加上--pretty=oneline参数
+	2.git reset --hard HEAD^ 命令 表示回到上一个版本，HEAD表示当前版本，上上版本就是HEAD^^
+	3.恢复到新版本：
+		1.使用git reflog命令，它用来记录你的每一次命令。
+		2.git reset --hard commit_id
+(5)管理修改：
+	1.git commit 只会把暂存区里面的提交到master(分支)中
+	2.你修改了却没有git add,将修改添加到暂存区中，就不会被提交
+		就是说git 管理你修改的并添加到暂存区的。
+(6)撤销修改：
+	1.使用 git checkout --filename来撤销修改
+	2.表示回到最近一次 提交的版本 或者 暂存区 的状态
+	3.当你改乱工作区的某个文件内容，并添加到暂存区中，想丢弃修改，
+	可以这样做，使用命令git reset HEAD file 回到改乱的状态，
+	然后在使用命令git checkout --filename来撤销修改.
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
